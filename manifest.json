@@ -1,0 +1,10 @@
+{
+  "name": "A&A Fashion House Online Store",
+  "short_name": "A&A Fashion",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fffafc",
+  "theme_color": "#7c2342",
+  "description": "A&A Fashion House online store with cart, UPI, COD and WhatsApp ordering",
+  "icons": []
+}

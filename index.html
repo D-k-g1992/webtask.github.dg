@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7c2342">
+<title>A&A Fashion House | Online Store</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--wine:#75213e;--wine2:#9b3458;--ink:#241a20;--muted:#776b72;--line:#eadde3;--cream:#fff8f6;--blush:#f7e6ec;--gold:#e6bd78;--green:#168b50;--shadow:0 12px 34px #4b20300e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink)}
+header{color:#fff;background:linear-gradient(115deg,#481126 0%,#75213e 50%,#a84465 100%);padding:0 18px 34px;overflow:hidden;position:relative}
+header:before{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff18;border-radius:50%;right:-130px;top:-210px;box-shadow:0 0 0 42px #ffffff08,0 0 0 84px #ffffff06;pointer-events:none}
+.top{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:19px 0;border-bottom:1px solid #ffffff25;position:relative;z-index:1}
+.brand{font-size:clamp(20px,3.5vw,31px);font-weight:900;letter-spacing:1.2px}.tagline{opacity:.8;margin-top:4px;font-size:12px;letter-spacing:1.7px;text-transform:uppercase}
+.cartbtn,.adminbtn{border:1px solid #ffffff55;background:#ffffff12;color:#fff;border-radius:999px;padding:10px 15px;font-weight:750;transition:.2s}
+.cartbtn:hover,.adminbtn:hover{background:#ffffff26;transform:translateY(-1px)}
+.hero{max-width:1160px;margin:35px auto 0;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(34px,5.7vw,62px);line-height:1.04;letter-spacing:-1.8px;margin:12px 0 16px;max-width:650px}
+.hero p{max-width:530px;line-height:1.8;margin:0 0 24px;color:#f9eaf0;font-size:16px}
+.hero-kicker{font-size:11px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase;color:#f3d7e1}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#351521;text-decoration:none;border-radius:999px;padding:14px 21px;font-weight:850;box-shadow:0 8px 20px #25091525;transition:.2s}.cta:hover{transform:translateY(-2px);box-shadow:0 12px 25px #25091535}
+.hero-art{min-height:300px;border-radius:28px;background:linear-gradient(145deg,#f4d5df,#e9aebe 55%,#a43b60);display:flex;align-items:center;justify-content:center;font-size:clamp(65px,10vw,120px);position:relative;box-shadow:0 24px 60px #27091438;isolation:isolate}
+.hero-art:before{content:"";position:absolute;inset:18px;border:1px solid #ffffff70;border-radius:20px;z-index:-1}
+.hero-art:after{content:"WINTER COLLECTION";position:absolute;bottom:27px;left:0;right:0;text-align:center;font-size:11px;font-weight:900;letter-spacing:3px;color:#5b1a32}
+main{max-width:1160px;margin:0 auto;padding:36px 18px 56px}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:4px 0 20px}
+.sectionhead h2{margin:0;font-size:clamp(24px,3vw,32px);letter-spacing:-.7px}.sectionhead p{margin:7px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:#fff;border:1px solid #efe2e7;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s,border-color .22s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px #52203617;border-color:#dfb7c6}
+.productart{height:205px;display:flex;align-items:center;justify-content:center;font-size:74px;background:linear-gradient(145deg,#f9eaf0,#fff9fb);overflow:hidden;position:relative}
+.productart img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.card:hover .productart img{transform:scale(1.04)}
+.cardbody{padding:17px}.card h3{margin:0 0 7px;font-size:18px;font-weight:800}.desc{color:var(--muted);font-size:13px;line-height:1.5;min-height:38px}.price{font-size:22px;font-weight:900;margin:13px 0;color:var(--wine)}.small{font-size:12px;color:var(--muted)}
+button{cursor:pointer;font:inherit}.add{width:100%;border:0;border-radius:12px;padding:12px;background:var(--wine);color:white;font-weight:800;transition:.2s}.add:hover{background:#4f142a;transform:translateY(-1px)}
+.panel{background:#fff;border:1px solid #eee0e6;border-radius:22px;padding:24px;margin-top:26px;box-shadow:var(--shadow)}
+.panel h2{margin:0 0 15px;font-size:24px;letter-spacing:-.5px}
+.cartline{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.cartline:last-child{border:0}
+.total{display:flex;justify-content:space-between;font-size:22px;font-weight:900;padding:17px 0;color:var(--wine)}
+.checkout{display:grid;grid-template-columns:1fr 1fr;gap:28px}.fields{display:grid;gap:12px}input,textarea,select{width:100%;padding:13px 14px;border:1px solid #ddcbd3;border-radius:12px;font:inherit;background:#fff;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}input:focus,textarea:focus,select:focus{border-color:var(--wine2);box-shadow:0 0 0 3px #9b34581b}
+label{font-size:13px;font-weight:750;display:grid;gap:7px}
+.actions{display:grid;gap:10px}.action{border:0;border-radius:12px;padding:14px;font-weight:850;transition:transform .2s,filter .2s}.action:hover{transform:translateY(-1px);filter:brightness(.97)}.whatsapp{background:var(--green);color:white}.upi{background:var(--gold);color:#392a0b}.cod{background:#f0e5ea;color:#482334}
+.note{font-size:12px;color:var(--muted);line-height:1.65}
+.admin-panel{border:2px solid #dfbdca;background:linear-gradient(180deg,#fff,#fff9fb)}
+.admin-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-products{display:grid;gap:10px;margin-top:14px}
+.admin-item{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+.thumb{width:62px;height:62px;flex-shrink:0;border-radius:10px;background:var(--blush);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:26px}.thumb img{width:100%;height:100%;object-fit:cover}
+.admin-item .meta{flex:1;min-width:0}.admin-item .meta b{display:block;overflow-wrap:anywhere}.item-actions{display:flex;gap:6px;flex-wrap:wrap}
+.secondary,.danger{border:0;border-radius:9px;padding:9px 11px;font-weight:750}.secondary{background:#f3e8ed;color:#512337}.danger{background:#ffe6e6;color:#9b2020}.primary{border:0;border-radius:11px;padding:13px 16px;background:var(--wine);color:#fff;font-weight:850}
+.hidden{display:none!important}
+footer{text-align:center;background:#32121f;color:#f8eaf0;padding:30px 18px;font-size:13px;line-height:1.8}
+#cartPanel{scroll-margin-top:20px}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{min-height:240px}.productart{height:175px}}
+@media(max-width:640px){header{padding:0 14px 25px}.top{padding:15px 0}.brand{font-size:20px;letter-spacing:.4px}.tagline{font-size:10px;letter-spacing:1px}.cartbtn,.adminbtn{padding:9px 10px;font-size:12px}.hero{grid-template-columns:1fr;margin-top:26px;gap:22px}.hero h1{font-size:39px;letter-spacing:-1.2px}.hero p{font-size:14px}.hero-art{min-height:175px;font-size:68px;border-radius:22px}.hero-art:after{bottom:20px}main{padding:27px 13px 40px}.sectionhead{align-items:start;flex-direction:column}.products{gap:11px}.productart{height:135px;font-size:55px}.card{border-radius:15px}.cardbody{padding:12px}.card h3{font-size:16px}.desc{font-size:12px;min-height:35px}.price{font-size:19px;margin:10px 0}.add{padding:10px;font-size:13px}.panel{padding:17px;border-radius:17px}.checkout,.admin-grid{grid-template-columns:1fr}.admin-item{align-items:flex-start}.item-actions{flex-direction:column}.total{font-size:20px}}
+@media(max-width:360px){.top{align-items:flex-start}.brand{font-size:18px}.cartbtn,.adminbtn{padding:8px;font-size:11px}.hero h1{font-size:33px}.products{gap:8px}.productart{height:112px}.cardbody{padding:9px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div><div class="brand">A&A FASHION HOUSE</div><div class="tagline">Winter Wear • Wholesale & Retail</div></div>
+  <div style="display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end">
+   <button class="cartbtn" onclick="document.getElementById('cartPanel').scrollIntoView({behavior:'smooth'})">🛒 Cart (<span id="cartCount">0</span>)</button>
+   <button class="adminbtn" onclick="toggleAdmin()">⚙️ Admin</button>
+  </div>
+ </div>
+ <div class="hero"><div><div class="hero-kicker">New Season • Winter Wear</div><h1>सर्दियों की खरीदारी, अब ऑनलाइन!</h1><p>Jacket, Sweater, Winter Cap और Shawl — प्रोडक्ट की फोटो, कीमत और विवरण देखें; कार्ट में जोड़ें और UPI, COD या WhatsApp से ऑर्डर करें।</p><a class="cta" href="#products">प्रोडक्ट देखें ↓</a></div><div class="hero-art">🧥 🧣 🧤</div></div>
+</header>
+<main>
+ <section id="adminPanel" class="panel admin-panel hidden">
+  <div class="admin-head"><div><h2>Admin: Product Management</h2><p class="note">यहाँ प्रोडक्ट जोड़ें, एडिट करें, फोटो अपलोड करें या डिलीट करें।</p></div><button class="secondary" onclick="toggleAdmin()">बंद करें ✕</button></div>
+  <form id="productForm" class="fields">
+   <input id="editId" type="hidden">
+   <div class="admin-grid">
+    <label>प्रोडक्ट का नाम *<input id="pName" required placeholder="जैसे: Men Winter Jacket"></label>
+    <label>कीमत (₹) *<input id="pPrice" type="number" min="0" step="0.01" required placeholder="जैसे: 799"></label>
+    <label>विवरण<input id="pDesc" placeholder="रंग, साइज या अन्य जानकारी"></label>
+    <label>प्रोडक्ट फोटो अपलोड<input id="pImage" type="file" accept="image/*"><span class="note">JPG, PNG या WebP. बड़ी फोटो अपने-आप छोटा की जाएगी।</span></label>
+   </div>
+   <div id="imagePreview" class="thumb hidden" style="width:110px;height:110px"></div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="primary" type="submit" id="saveProductBtn">+ प्रोडक्ट जोड़ें</button><button class="secondary hidden" type="button" id="cancelEditBtn" onclick="resetProductForm()">एडिट रद्द करें</button></div>
+  </form>
+  <h3>सभी प्रोडक्ट</h3><div id="adminProducts" class="admin-products"></div>
+  <p class="note">नोट: यह वर्जन प्रोडक्ट डेटा इसी ब्राउज़र/डिवाइस में सेव करता है। दूसरे मोबाइल पर भी वही प्रोडक्ट दिखाने के लिए साझा ऑनलाइन डेटाबेस और सुरक्षित एडमिन लॉगिन जोड़ना होगा।</p>
+ </section>
+ <div class="sectionhead" id="products"><div><h2>हमारे प्रोडक्ट</h2><p>कीमत अपने-आप प्रोडक्ट कार्ड, कार्ट और कुल राशि में दिखेगी।</p></div></div>
+ <div class="products" id="productGrid"></div>
+ <section class="panel" id="cartPanel"><h2>🛒 ऑर्डर करने के लिए कार्ट</h2><div id="cartItems"><p class="note">अभी कार्ट खाली है।</p></div><div class="total"><span>कुल</span><span id="cartTotal">₹0</span></div>
+  <div class="checkout">
+   <div><h2>डिलीवरी विवरण</h2><div class="fields">
+    <label>ग्राहक का नाम *<input id="customerName" required placeholder="अपना पूरा नाम लिखें" autocomplete="name"></label>
+    <label>मोबाइल नंबर *<input id="customerPhone" required type="tel" placeholder="10 अंकों का मोबाइल नंबर" autocomplete="tel"></label>
+    <label>पूरा डिलीवरी पता *<textarea id="customerAddress" required rows="3" placeholder="मकान नंबर, गाँव/शहर, पोस्ट, जिला, राज्य"></textarea></label>
+    <label>PIN कोड *<input id="customerPin" required inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="ग्राहक का 6 अंकों का PIN"></label>
+    <label>पेमेंट तरीका<select id="paymentMethod"><option value="UPI">UPI</option><option value="COD">Cash on Delivery (COD)</option><option value="WhatsApp">WhatsApp पर बात करें</option></select></label>
+   </div></div>
+   <div class="actions"><h2>पेमेंट और ऑर्डर विकल्प</h2><button class="action whatsapp" onclick="sendWhatsApp()">WhatsApp से ऑर्डर करें</button><button class="action upi" onclick="payUPI()">UPI से पेमेंट करें</button><button class="action cod" onclick="chooseCOD()">Cash on Delivery (COD) चुनें</button>
+    <p class="note">UPI बटन भुगतान अनुरोध खोलता है, भुगतान की पुष्टि नहीं करता। पेमेंट अपने बैंक/UPI ऐप में जाँचें और ऑर्डर WhatsApp पर भेजें।</p>
+    <p class="note">WhatsApp: 6260306702<br>UPI ID: 7024800242@ybI</p>
+   </div>
+  </div>
+ </section>
+ <section class="panel"><h2>दुकान / Seller का पता</h2><p><strong>Village:</strong> Belwa Tiwari</p><p><strong>Post:</strong> Chaumukha</p><p><strong>District:</strong> Maharajganj, Uttar Pradesh</p><p><strong>PIN Code:</strong> 273151</p><p><strong>GSTIN:</strong> 09CYMPG4979C1Z0</p><p class="note">ग्राहक अपना डिलीवरी PIN और पूरा पता चेकआउट में अलग से भरें। ऑनलाइन स्टोर सार्वजनिक करने के लिए वेबसाइट होस्टिंग पर अपलोड करना होगा।</p></section>
+</main>
+<footer>© <span id="year"></span> A&A Fashion House • सभी अधिकार सुरक्षित</footer>
+<script>
+const WHATSAPP_NUMBER = "916260306702";
+const UPI_ID = "7024800242@ybI";
+const DEFAULT_PRODUCTS = [
+ {id:"jacket",name:"Jacket",price:999,emoji:"🧥",desc:"गर्म और स्टाइलिश विंटर जैकेट",image:""},
+ {id:"sweater",name:"Sweater",price:599,emoji:"🧶",desc:"सर्दियों के लिए आरामदायक स्वेटर",image:""},
+ {id:"cap",name:"Winter Cap",price:149,emoji:"🧢",desc:"गर्म विंटर कैप",image:""},
+ {id:"shawl",name:"Shawl",price:399,emoji:"🧣",desc:"सॉफ्ट और आरामदायक शॉल",image:""}
+];
+const money = n => "₹" + Number(n).toLocaleString("en-IN",{maximumFractionDigits:2});
+let products = loadProducts();
+let cart = {};
+let draftImage = "";
+function loadProducts(){try{const x=JSON.parse(localStorage.getItem("aa_fashion_products_v3"));return Array.isArray(x)&&x.length?x:DEFAULT_PRODUCTS.map(p=>({...p}))}catch(e){return DEFAULT_PRODUCTS.map(p=>({...p}))}}
+function saveProducts(){try{localStorage.setItem("aa_fashion_products_v3",JSON.stringify(products));return true}catch(e){alert("ब्राउज़र में स्टोरेज भर गया है। कृपया छोटी फोटो अपलोड करें या कुछ प्रोडक्ट हटाएँ।");return false}}
+function safeText(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderProducts(){
+ const grid=document.getElementById("productGrid");
+ if(!products.length){grid.innerHTML='<p class="note">अभी कोई प्रोडक्ट नहीं है। Admin से नया प्रोडक्ट जोड़ें।</p>';return}
+ grid.innerHTML=products.map(p=>`<article class="card"><div class="productart">${p.image?`<img src="${p.image}" alt="${safeText(p.name)}">`:p.emoji||"🛍️"}</div><div class="cardbody"><h3>${safeText(p.name)}</h3><div class="desc">${safeText(p.desc||"")}</div><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart('${safeText(p.id)}')">+ कार्ट में जोड़ें</button></div></article>`).join("");
+}
+function addToCart(id){if(!products.some(p=>p.id===id))return;cart[id]=(cart[id]||0)+1;renderCart()}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function getItems(){return products.filter(p=>cart[p.id]).map(p=>({...p,qty:cart[p.id]}))}
+function total(){return getItems().reduce((s,p)=>s+Number(p.price)*p.qty,0)}
+function renderCart(){
+ const items=getItems();document.getElementById("cartCount").textContent=items.reduce((s,p)=>s+p.qty,0);
+ document.getElementById("cartTotal").textContent=money(total());
+ document.getElementById("cartItems").innerHTML=items.length?items.map(p=>`<div class="cartline"><div><b>${safeText(p.name)}</b><div class="small">${money(p.price)} × ${p.qty}</div></div><div><b>${money(p.price*p.qty)}</b><div><button onclick="changeQty('${safeText(p.id)}',-1)">−</button> ${p.qty} <button onclick="changeQty('${safeText(p.id)}',1)">+</button></div></div></div>`).join(""):'<p class="note">अभी कार्ट खाली है। प्रोडक्ट में “कार्ट में जोड़ें” दबाएँ।</p>';
+}
+function toggleAdmin(){document.getElementById("adminPanel").classList.toggle("hidden");if(!document.getElementById("adminPanel").classList.contains("hidden")){renderAdminProducts();document.getElementById("adminPanel").scrollIntoView({behavior:"smooth"})}}
+function renderAdminProducts(){
+ const el=document.getElementById("adminProducts");
+ if(!products.length){el.innerHTML='<p class="note">कोई प्रोडक्ट नहीं। ऊपर से जोड़ें।</p>';return}
+ el.innerHTML=products.map(p=>`<div class="admin-item"><div class="thumb">${p.image?`<img src="${p.image}" alt="">`:p.emoji||"🛍️"}</div><div class="meta"><b>${safeText(p.name)}</b><div>${money(p.price)}</div><div class="small">${safeText(p.desc||"")}</div></div><div class="item-actions"><button class="secondary" onclick="editProduct('${safeText(p.id)}')">✏️ Edit</button><button class="danger" onclick="deleteProduct('${safeText(p.id)}')">🗑 Delete</button></div></div>`).join("");
+}
+function resetProductForm(){document.getElementById("productForm").reset();document.getElementById("editId").value="";draftImage="";document.getElementById("saveProductBtn").textContent="+ प्रोडक्ट जोड़ें";document.getElementById("cancelEditBtn").classList.add("hidden");document.getElementById("imagePreview").classList.add("hidden")}
+function editProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById("editId").value=p.id;document.getElementById("pName").value=p.name;document.getElementById("pPrice").value=p.price;document.getElementById("pDesc").value=p.desc||"";draftImage=p.image||"";document.getElementById("saveProductBtn").textContent="बदलाव सेव करें";document.getElementById("cancelEditBtn").classList.remove("hidden");showPreview(draftImage);document.getElementById("productForm").scrollIntoView({behavior:"smooth"})}
+function deleteProduct(id){const p=products.find(x=>x.id===id);if(!p)return;if(!confirm(`क्या "${p.name}" को डिलीट करना चाहते हैं?`))return;products=products.filter(x=>x.id!==id);delete cart[id];if(saveProducts()){renderProducts();renderCart();renderAdminProducts();resetProductForm()}}
+function showPreview(src){const box=document.getElementById("imagePreview");if(src){box.innerHTML=`<img src="${src}" alt="फोटो प्रीव्यू">`;box.classList.remove("hidden")}else{box.classList.add("hidden");box.innerHTML=""}}
+document.getElementById("pImage").addEventListener("change",e=>{
+ const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith("image/")){alert("कृपया इमेज फाइल चुनें।");e.target.value="";return}
+ const reader=new FileReader();reader.onload=ev=>{const img=new Image();img.onload=()=>{const max=900,scale=Math.min(1,max/Math.max(img.width,img.height)),canvas=document.createElement("canvas");canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);draftImage=canvas.toDataURL("image/jpeg",.78);showPreview(draftImage)};img.onerror=()=>alert("इस फोटो को पढ़ा नहीं जा सका।");img.src=ev.target.result};reader.readAsDataURL(file)
+});
+document.getElementById("productForm").addEventListener("submit",e=>{
+ e.preventDefault();const name=document.getElementById("pName").value.trim(),price=Number(document.getElementById("pPrice").value),desc=document.getElementById("pDesc").value.trim(),editId=document.getElementById("editId").value;
+ if(!name||!Number.isFinite(price)||price<0){alert("नाम और सही कीमत भरें।");return}
+ if(editId){const i=products.findIndex(p=>p.id===editId);if(i>=0)products[i]={...products[i],name,price,desc,image:draftImage||products[i].image||""}}
+ else{products.unshift({id:"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name,price,desc,image:draftImage,emoji:"🛍️"})}
+ if(saveProducts()){renderProducts();renderCart();renderAdminProducts();resetProductForm();alert(editId?"प्रोडक्ट अपडेट हो गया।":"प्रोडक्ट जोड़ दिया गया।")}
+});
+function orderText(){
+ const items=getItems();if(!items.length){alert("कृपया पहले कार्ट में प्रोडक्ट जोड़ें।");return null}
+ const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim(),pin=document.getElementById("customerPin").value.trim(),method=document.getElementById("paymentMethod").value;
+ if(!name||!phone||!address||!pin){alert("कृपया ग्राहक का नाम, मोबाइल नंबर, पूरा पता और PIN कोड भरें।");return null}
+ if(!/^[0-9]{6}$/.test(pin)){alert("कृपया 6 अंकों का सही PIN कोड भरें।");return null}
+ if(!/^[0-9+() -]{10,16}$/.test(phone)){alert("कृपया सही मोबाइल नंबर भरें।");return null}
+ const lines=items.map(p=>`${p.name} x ${p.qty} = ${money(p.price*p.qty)}`).join("\n");
+ const body=`नया ऑर्डर - A&A Fashion House\nनाम: ${name}\nमोबाइल: ${phone}\nपता: ${address}\nPIN: ${pin}\n\nप्रोडक्ट:\n${lines}\nकुल: ${money(total())}\nपेमेंट तरीका: ${method}`;
+ return encodeURIComponent(body);
+}
+function sendWhatsApp(){const msg=orderText();if(msg)window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank","noopener")}
+function payUPI(){const msg=orderText();if(!msg)return;const url=`upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent("A&A Fashion House")}&am=${total().toFixed(2)}&cu=INR&tn=${encodeURIComponent("A&A Fashion House order")}`;window.location.href=url;setTimeout(()=>{if(confirm("UPI ऐप में पेमेंट पूरा करने के बाद WhatsApp पर ऑर्डर भी भेजें?"))window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank","noopener")},700)}
+function chooseCOD(){document.getElementById("paymentMethod").value="COD";sendWhatsApp()}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();renderCart();
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body></html>
